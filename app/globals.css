@@ -17,3 +17,12 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

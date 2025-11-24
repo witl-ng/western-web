@@ -7,7 +7,20 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: '#1A1A1A' }}>
+    <div className="min-h-screen text-white relative" style={{ backgroundColor: '#1A1A1A' }}>
+      {/* Background Image Overlay with 10% Opacity */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/new-bg.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.1,
+        }}
+      ></div>
+
+      {/* Main Content */}
+      <div className="relative z-10">
       {/* Navigation */}
       <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[90%] max-w-[1100px]">
         <div
@@ -87,16 +100,30 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
-        className="relative flex items-center justify-center min-h-[500px] md:min-h-[672px] px-4 py-20 md:py-0"
+        className="relative flex items-center justify-center min-h-[700px] md:min-h-[850px] lg:min-h-[900px] px-4 py-20 md:py-0"
         style={{
           width: '100vw',
           opacity: 1,
-          backgroundImage: "url('/background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(26, 26, 26, 0.2)' }}></div>
+        {/* Rotating Globe Background */}
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden pt-32 md:pt-40 lg:pt-48">
+          <div
+            className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px]"
+            style={{
+              animation: 'rotate 30s linear infinite',
+            }}
+          >
+            <Image
+              src="/Globe 3.png"
+              alt="Globe"
+              width={700}
+              height={700}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
         <div className="relative z-10 text-center w-full max-w-4xl mx-auto px-4 md:px-6">
           <h1 className="font-bold mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
             Powering Africa&apos;s Future Through<br />
@@ -117,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-12 md:py-20 px-4 md:px-6" style={{ backgroundColor: '#1A1A1A' }}>
+      <section className="py-12 md:py-20 px-4 md:px-6">
         <div className="w-full max-w-6xl mx-auto">
           <h2 className="font-bold text-center mb-3 md:mb-4 text-2xl md:text-3xl lg:text-[35px]">
             WHAT WE DO
@@ -182,7 +209,7 @@ export default function Home() {
       </section>
 
       {/* Featured Product Section */}
-      <section className="py-12 md:py-20 px-4 md:px-6" style={{ backgroundColor: '#1A1A1A' }}>
+      <section className="py-12 md:py-20 px-4 md:px-6">
         <div className="w-full max-w-7xl mx-auto">
           <h2 className="font-bold text-center mb-2 text-2xl md:text-3xl lg:text-[35px]">
             FEATURED PRODUCT
@@ -283,7 +310,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-12 md:py-20 px-4 md:px-6" style={{ backgroundColor: '#1A1A1A' }}>
+      <section className="py-12 md:py-20 px-4 md:px-6">
         <div className="w-full max-w-7xl mx-auto">
           <div className="w-full max-w-[674px] mx-auto flex flex-col gap-3 md:gap-[14px] mb-8 md:mb-12">
             <h2 className="font-bold text-center text-2xl md:text-3xl lg:text-[35px]">
@@ -343,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-12 md:py-20 px-4 md:px-6 relative" style={{ backgroundColor: '#1A1A1A' }}>
+      <section className="py-12 md:py-20 px-4 md:px-6 relative">
         <div className="w-full max-w-7xl mx-auto">
           {/* Title and Subtitle */}
           <h2 className="font-bold text-center mb-3 md:mb-4 text-2xl md:text-3xl lg:text-[35px]">
@@ -541,7 +568,7 @@ export default function Home() {
       </footer>
 
       {/* Copyright */}
-      <div className="w-full pt-6 md:pt-8 pb-6 md:pb-8 border-t border-gray-800 px-4" style={{ backgroundColor: '#1A1A1A' }}>
+      <div className="w-full pt-6 md:pt-8 pb-6 md:pb-8 border-t border-gray-800 px-4">
         <div className="flex items-center justify-center gap-2 text-gray-400 text-xs md:text-sm text-center">
           <Image
             src="/vuesax/linear/copyright.png"
@@ -552,6 +579,7 @@ export default function Home() {
           />
           <p>2025 Western Innovation Technology Ltd. All rights reserved.</p>
         </div>
+      </div>
       </div>
     </div>
   );
