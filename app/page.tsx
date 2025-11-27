@@ -107,7 +107,7 @@ export default function Home() {
         }}
       >
         {/* Rotating Globe Background */}
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden pt-32 md:pt-40 lg:pt-48">
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden pt-12 md:pt-16 lg:pt-20">
           <div
             className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px]"
             style={{
