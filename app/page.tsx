@@ -1,11 +1,8 @@
-'use client';
-
 import Image from "next/image";
-import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen text-white relative" style={{ backgroundColor: '#1A1A1A' }}>
       {/* Background Image Overlay with 10% Opacity */}
@@ -22,81 +19,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="relative z-10">
       {/* Navigation */}
-      <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[90%] max-w-[1100px]">
-        <div
-          className="bg-[#1a1a1a]/40 rounded-full px-4 md:px-8 py-3 md:py-4 flex items-center justify-between relative"
-          style={{
-            border: '0.5px solid',
-            borderImage: 'linear-gradient(269.63deg, rgba(255, 255, 255, 0.05) 2.68%, #FFFFFF 50.22%, rgba(255, 255, 255, 0.05) 97.75%) 1',
-            backdropFilter: 'blur(10px)',
-            boxShadow: '0px 2px 4px 0px #FFFFFF66 inset, 0px -2px 4px 0px #00000033',
-          }}
-        >
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Image
-              src="/western-logo.png"
-              alt="Western Innovation"
-              width={180}
-              height={40}
-              className="h-8 md:h-10 w-auto"
-            />
-          </div>
-
-          {/* Nav Links - Centered (Desktop) */}
-          <ul className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm absolute left-1/2 -translate-x-1/2">
-            <li><a href="#" className="text-[#FFCC33] hover:text-[#FFCC33]/80 transition-colors">Home</a></li>
-            <li><a href="#" className="text-white hover:text-[#FFCC33] transition-colors">About</a></li>
-            <li><a href="#" className="text-white hover:text-[#FFCC33] transition-colors">Services</a></li>
-            <li><a href="#" className="text-white hover:text-[#FFCC33] transition-colors">Products</a></li>
-            <li><a href="#" className="text-white hover:text-[#FFCC33] transition-colors">Careers</a></li>
-          </ul>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-white p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-
-          {/* Contact Button (Desktop) */}
-          <button className="hidden lg:block bg-[#FFCC33] text-black px-4 md:px-6 py-2 md:py-2.5 rounded-full font-medium text-sm md:text-base hover:bg-[#FFCC33]/90 transition-colors">
-            Contact Us
-          </button>
-        </div>
-
-        {/* Mobile Menu Dropdown */}
-        {mobileMenuOpen && (
-          <div
-            className="lg:hidden mt-2 bg-[#1a1a1a]/95 rounded-2xl px-6 py-4"
-            style={{
-              backdropFilter: 'blur(10px)',
-              border: '0.5px solid rgba(255, 204, 51, 0.3)',
-            }}
-          >
-            <ul className="space-y-3">
-              <li><a href="#" className="block text-[#FFCC33] hover:text-[#FFCC33]/80 transition-colors py-2">Home</a></li>
-              <li><a href="#" className="block text-white hover:text-[#FFCC33] transition-colors py-2">About</a></li>
-              <li><a href="#" className="block text-white hover:text-[#FFCC33] transition-colors py-2">Services</a></li>
-              <li><a href="#" className="block text-white hover:text-[#FFCC33] transition-colors py-2">Products</a></li>
-              <li><a href="#" className="block text-white hover:text-[#FFCC33] transition-colors py-2">Careers</a></li>
-            </ul>
-            <button className="w-full mt-4 bg-[#FFCC33] text-black px-6 py-2.5 rounded-full font-medium text-sm hover:bg-[#FFCC33]/90 transition-colors">
-              Contact Us
-            </button>
-          </div>
-        )}
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section
@@ -458,128 +381,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer Border */}
-      <div style={{ borderTop: '0.3px solid #FFCC33', width: '100%' }}></div>
-
       {/* Footer */}
-      <footer className="bg-[#1a1a1a] w-full px-6 md:px-12 lg:px-20 xl:px-[100px] py-8 md:py-12 lg:py-[50px]">
-        <div className="w-full max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-[99.69px]">
-            {/* Left Column - Logo and Social Media */}
-            <div>
-              <Image
-                src="/western-logo.png"
-                alt="Western Innovation"
-                width={180}
-                height={40}
-                className="h-8 md:h-10 w-auto mb-4 md:mb-6"
-              />
-              <div className="flex items-center gap-3 md:gap-4">
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="/facebook.png"
-                    alt="Facebook"
-                    width={24}
-                    height={24}
-                    className="w-5 h-5 md:w-6 md:h-6"
-                  />
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="/insta.png"
-                    alt="Instagram"
-                    width={24}
-                    height={24}
-                    className="w-5 h-5 md:w-6 md:h-6"
-                  />
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="/x.png"
-                    alt="X"
-                    width={24}
-                    height={24}
-                    className="w-5 h-5 md:w-6 md:h-6"
-                  />
-                </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="/linkedin.png"
-                    alt="LinkedIn"
-                    width={24}
-                    height={24}
-                    className="w-5 h-5 md:w-6 md:h-6"
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Middle Column - Our Company */}
-            <div>
-              <h3 className="text-white font-bold text-base md:text-lg mb-3 md:mb-4">Our Company</h3>
-              <ul className="space-y-2 md:space-y-3">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
-                    Careers
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Right Column - Help & Support */}
-            <div>
-              <h3 className="text-white font-bold text-base md:text-lg mb-3 md:mb-4">Help & Support</h3>
-              <ul className="space-y-2 md:space-y-3">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
-                    FAQs
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
-                    Terms & Conditions
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
-                    Privacy policy
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </footer>
-
-      {/* Copyright */}
-      <div className="w-full pt-6 md:pt-8 pb-6 md:pb-8 border-t border-gray-800 px-4">
-        <div className="flex items-center justify-center gap-2 text-gray-400 text-xs md:text-sm text-center">
-          <Image
-            src="/vuesax/linear/copyright.png"
-            alt="Copyright"
-            width={20}
-            height={20}
-            className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
-          />
-          <p>2025 Western Innovation Technology Ltd. All rights reserved.</p>
-        </div>
-      </div>
+      <Footer />
       </div>
     </div>
   );
