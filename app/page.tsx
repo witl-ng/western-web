@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen text-white relative" style={{ backgroundColor: '#1A1A1A' }}>
-      {/* Background Image Overlay with 10% Opacity */}
+      {/* Background Image Overlay with 10% Opay */}
       <div
         className="absolute inset-0 z-0"
         style={{
