@@ -34,11 +34,11 @@ export default function Home() {
           <div
             className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px]"
             style={{
-              animation: 'rotate 30s linear infinite',
+              animation: 'rotate 8s ease-in-out infinite',
             }}
           >
             <Image
-              src="/Globe 3.png"
+              src="/world_hero.png"
               alt="Globe"
               width={700}
               height={700}
